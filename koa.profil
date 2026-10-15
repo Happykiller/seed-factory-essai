@@ -1,0 +1,24 @@
+// Seed d'essai minimale : valide la chaîne KoA (création, bootstrap, reprovisionnement, destruction).
+{
+  "version": 1,
+  "nom": "seed-factory-essai",
+  "base": "debian",
+  "utilisateur": "agent",
+  "paquets": ["git"],
+  "bootstrap": "bootstrap.sh",
+  "repertoire": "~/profile",
+  "agent": {
+    "nature": "claude",
+    "mode": "auto",
+    "consigne": "Lis ton CLAUDE.md, puis exécute la vérification d'essai qu'il décrit et rends compte."
+  },
+  // Rien à faire hors de la distro : tout reste coupé.
+  "cloisonnement": {
+    "interop": false,
+    "montage_windows": false
+  },
+  "secrets": {
+    // Valeur quelconque : sert seulement à vérifier l'acheminement par ~/.agent-env.
+    "SALUTATION": { "requis": false }
+  }
+}
